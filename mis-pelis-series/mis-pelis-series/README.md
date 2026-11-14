@@ -1,12 +1,10 @@
-# 🎬 Mis Pelis y Series: CRUD desarrollado con IA
 
-**Seminario:** Gestión de Software Ágil asistido por Inteligencia Artificial
-**Autor/a:** David Santiago Sierra Galindo
-**Video explicativo:** _[Pega aquí el enlace del video]_
 
-## Descripción
+Gestión de Software Ágil asistido por Inteligencia Artificial
+David Santiago Sierra Galindo
+video explicativo: _[Pega aquí el enlace del video]_
 
-**Mis Pelis y Series** es una aplicación web para llevar el registro de las películas y series que has visto, estás viendo o tienes pendientes. Hace las cuatro operaciones de un CRUD:
+Mis Pelis Y serieses una aplicación web para llevar el registro de las películas y series que has visto, estás viendo o tienes pendientes. Hace las cuatro operaciones de un CRUD:
 
 | Operación | Qué hace en la app |
 |-----------|--------------------|
@@ -36,9 +34,9 @@ No necesita servidor, base de datos ni instalar dependencias.
 
 ## Instrucciones para ejecutar
 
-1. Clona el repositorio:
+1. repositorio
    ```bash
-   git clone https://github.com/TU-USUARIO/mis-pelis-series.git
+   git: https://github.com/davidsierraga-cell/mis-pelis-seriess
    ```
 2. Entra a la carpeta y abre `index.html` con doble clic (se abre en el navegador).
 
