@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mis Pelis y Series · CRUD</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="encabezado">
+    <button type="button" id="boton-tema" class="boton pequeno boton-tema">☀️ Modo claro</button>
+    <h1>🎬 Mis Pelis y Series</h1>
+    <p>Lleva el registro de lo que ves, lo que estás viendo y lo que tienes pendiente.</p>
+  </header>
+
+  <main class="contenedor">
+    <!-- ===== FORMULARIO: se usa para CREATE y para UPDATE ===== -->
+    <section class="tarjeta">
+      <h2 id="titulo-formulario">Agregar título</h2>
+      <form id="formulario" novalidate>
+        <input type="hidden" id="item-id">
+
+        <div class="campo">
+          <label for="titulo">Título *</label>
+          <input type="text" id="titulo" placeholder="Ej: Breaking Bad" required>
+        </div>
+
+        <div class="fila">
+          <div class="campo">
+            <label for="tipo">Tipo</label>
+            <select id="tipo">
+              <option value="pelicula">Película</option>
+              <option value="serie">Serie</option>
+            </select>
+          </div>
+          <div class="campo">
+            <label for="anio">Año</label>
+            <input type="number" id="anio" placeholder="2008" min="1888" max="2100">
+          </div>
+        </div>
+
+        <div class="fila">
+          <div class="campo">
+            <label for="genero">Género</label>
+            <select id="genero">
+              <option>Acción</option>
+              <option>Comedia</option>
+              <option>Drama</option>
+              <option>Terror</option>
+              <option>Ciencia ficción</option>
+              <option>Animación</option>
+              <option>Documental</option>
+              <option>Romance</option>
+              <option>Suspenso</option>
+              <option>Anime</option>
+              <option>Fantasía</option>
+              <option>Aventura</option>
+              <option>Misterio</option>
+              <option>Superhéroes</option>
+              <option>Histórica</option>
+              <option>Musical</option>
+              <option>Familiar</option>
+              <option>Deportes</option>
+              <option>K-drama</option>
+              <option>Reality</option>
+              <option>Telenovela</option>
+              <option>Otro</option>
+            </select>
+          </div>
+          <div class="campo">
+            <label for="plataforma">Plataforma</label>
+            <select id="plataforma">
+              <option>Netflix</option>
+              <option>Prime Video</option>
+              <option>Disney+</option>
+              <option>Max</option>
+              <option>Cine</option>
+              <option>Crunchyroll</option>
+              <option>Apple TV+</option>
+              <option>YouTube</option>
+              <option>Otra</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="fila">
+          <div class="campo">
+            <label for="estado">Estado</label>
+            <select id="estado">
+              <option value="por-ver">Por ver</option>
+              <option value="viendo">Viendo</option>
+              <option value="vista">Vista</option>
+            </select>
+          </div>
+          <div class="campo">
+            <label for="calificacion">Calificación</label>
+            <select id="calificacion">
+              <option value="0">Sin calificar</option>
+              <option value="1">★</option>
+              <option value="2">★★</option>
+              <option value="3">★★★</option>
+              <option value="4">★★★★</option>
+              <option value="5">★★★★★</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="campo">
+          <label for="resena">Notas o reseña <span id="contador-resena" class="contador-letras">0/300</span></label>
+          <textarea id="resena" rows="3" maxlength="300" placeholder="¿Qué te pareció? ¿Por qué capítulo vas?"></textarea>
+        </div>
+
+        <p id="mensaje-error" class="error" aria-live="polite"></p>
+
+        <div class="acciones-formulario">
+          <button type="submit" id="boton-guardar" class="boton primario">Agregar</button>
+          <button type="button" id="boton-cancelar" class="boton secundario oculto">Cancelar</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- ===== LISTADO: READ ===== -->
+    <section class="tarjeta">
+      <div class="cabecera-lista">
+        <h2>Mi lista <span id="contador" class="contador">0</span></h2>
+        <div class="filtros">
+          <input type="search" id="buscador" placeholder="Buscar por título…">
+          <select id="filtro-tipo">
+            <option value="todos">Pelis y series</option>
+            <option value="pelicula">Solo películas</option>
+            <option value="serie">Solo series</option>
+          </select>
+          <select id="filtro-estado">
+            <option value="todos">Todos los estados</option>
+            <option value="por-ver">Por ver</option>
+            <option value="viendo">Viendo</option>
+            <option value="vista">Vista</option>
+          </select>
+          <select id="orden" title="Ordenar">
+            <option value="recientes">Más recientes</option>
+            <option value="antiguos">Más antiguos</option>
+            <option value="calificacion">Mejor calificadas</option>
+            <option value="titulo">Título A-Z</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="estadisticas" class="estadisticas"></div>
+
+      <ul id="lista" class="lista"></ul>
+      <p id="lista-vacia" class="vacio">Tu lista está vacía. ¡Agrega tu primera peli o serie!</p>
+    </section>
+  </main>
+
+  <div id="aviso" class="aviso" role="status"></div>
+
+
+  <script src="app.js"></script>
+</body>
+</html>
