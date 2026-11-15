@@ -2,7 +2,7 @@
 
 Gestión de Software Ágil asistido por Inteligencia Artificial
 David Santiago Sierra Galindo
-video explicativo: _[Pega aquí el enlace del video]_
+video explicativo:
 
 Mis Pelis Y serieses una aplicación web para llevar el registro de las películas y series que has visto, estás viendo o tienes pendientes. Hace las cuatro operaciones de un CRUD:
 
